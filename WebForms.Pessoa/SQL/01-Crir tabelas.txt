@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[Pessoa] (
+    [Id]            INT           IDENTITY (1, 1) NOT NULL,
+    [Nome]          VARCHAR (100) NOT NULL,
+    [TipoPessoa]    INT           NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC),
+)
+
+
+
+CREATE PROCEDURE Gravar
+	@nome VARCHAR(100),
+	@tipopessoa int
+AS
+BEGIN
+	INSERT INTO Pessoa(Nome,TipoPessoa)
+		VALUES(@nome,@tipopessoa)
+END
+
+
+
+CREATE PROCEDURE Consultar
+AS
+BEGIN
+	SELECT * FROM Pessoa
+END
